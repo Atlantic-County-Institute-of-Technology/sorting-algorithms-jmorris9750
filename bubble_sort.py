@@ -1,12 +1,8 @@
 def bubble_sort(values):
 
-
     # from main import outer_pass, inner_pass
-    outer_pass =0
-    inner_pass= 0
-
-
-
+    outer_pass = 0
+    inner_pass = 0
 
     for i in range(len(values) - 1):
         outer_pass += 1

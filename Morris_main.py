@@ -1,44 +1,46 @@
 import random
 import os
 from bubble_sort import bubble_sort
+# from insertion_sort import insertion_sort
+
+numbers = [random.randint(1, 100) for x in range(10)]
 
 
-numbers = [random.randint(1,100) for i in range(10)]
+def clear_console():
 
+    # Clears the console screen based on the operating system.
+    if os.name == 'nt':  # For Windows
+        os.system('cls')
+    else:  # For macOS and Linux
+        os.system('clear')
 
 
 def main_menu():
-    print(
-        "[-] 0.Exit \n"
-        "[-] 1.Add apples to count \n"
-        "[-] 2.Make items \n"
-        "[-] 3.reset your food and apples")
-    try:
-        # user inputs option #
-        selection = int(input("please select an option:"))
-        os.system('cls' if os.name == 'nt' else 'clear')
+
+    while True:
+        print(
+            "[-] 0.Exit \n"
+            "[-] 1.bubble sort \n"
+            "[-] 2.insertion sort \n"
+            "[-] 3.selection sort")
+        try:
+            # user inputs option #
+            selection = int(input("please select an option:"))
+
+
+
+        except:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("invalid")
 
         if selection == 1:
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear_console()
 
-            print(numbers)
-            #
-            # outer_pass = 0
-            # inner_pass = 0
-            #
+            print(f"Unsorted values:{numbers}")
             print(f"sorted values {bubble_sort(numbers)}")
 
-    except:
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print("invalid")
-        main_menu()
+        elif selection == 2:
+            print(f"Unsorted values:{numbers}")
+            print(f"sorted values {insertion_sort(numbers)}")
 
 main_menu()
-
-# print(numbers)
-# #
-# # outer_pass = 0
-# # inner_pass = 0
-# #
-# print(f"sorted values {bubble_sort(numbers)}")
-

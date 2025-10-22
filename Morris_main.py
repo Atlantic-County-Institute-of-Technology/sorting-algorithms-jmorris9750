@@ -1,9 +1,8 @@
 import random
 import os
 from bubble_sort import bubble_sort
-# from insertion_sort import insertion_sort
-
-numbers = [random.randint(1, 100) for x in range(10)]
+from insertion_sort import insertion_sort
+from selection_sort import selection_sort
 
 
 def clear_console():
@@ -18,6 +17,7 @@ def clear_console():
 def main_menu():
 
     while True:
+        numbers = [random.randint(1, 100) for x in range(10)]
         print(
             "[-] 0.Exit \n"
             "[-] 1.bubble sort \n"
@@ -42,5 +42,9 @@ def main_menu():
         elif selection == 2:
             print(f"Unsorted values:{numbers}")
             print(f"sorted values {insertion_sort(numbers)}")
+
+        elif selection == 3:
+            print(f"Unsorted values:{numbers}")
+            print(f"sorted values {selection_sort(numbers)}")
 
 main_menu()

@@ -4,16 +4,15 @@
 #         while j >= 0 and current_value < values[j]:
 #
 #     return values
-def insertionSort(values):
+def insertion_sort(values):
     for step in range(1, len(values)):
         key = values[step]
-        j =step - 1
+        j = step - 1
 
-        while j>= 0 and key < values[j]:
+        while j >= 0 and key < values[j]:
             values[j + 1] = values[j]
-            j=j -1
+            j = j-1
 
-        values[j +1] = key
+        values[j + 1] = key
 
-print('sorted Array in Ascending Order:')
-print(insertionSort)h
+    return values

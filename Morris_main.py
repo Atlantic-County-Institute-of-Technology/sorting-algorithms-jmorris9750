@@ -5,7 +5,7 @@ from bubble_sort import bubble_sort
 from insertion_sort import insertion_sort
 from selection_sort import selection_sort
 
-
+# adds a loading screen
 def loading_screen(sort_type):
     print(f"{sort_type}...")
     time.sleep(0.5)
